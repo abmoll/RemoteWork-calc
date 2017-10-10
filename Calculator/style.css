@@ -1,0 +1,54 @@
+body {
+    width:315px;
+    height:300px;
+    padding:2px;
+    margin:10px auto;
+    background-color:#999;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: inline-block;
+
+}
+div id, p {
+    width:20px;
+    height:30px;
+    padding:2px;
+    margin:10px auto;
+    background-color:#999;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+#total {
+    height: 60px;
+    width: 300px;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0 5px;
+    background-color: #FFF;
+    text-align: right;
+    font-size: 60px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+#numbers {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+}
+#operators {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  font-size: 16px;
+  float: left;
+}
+p:hover {
+  background-color: #FAF7CC;
+}
+#calculator {
+
+    height: 300px;
+}
