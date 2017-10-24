@@ -1,0 +1,23 @@
+.menu-item {
+    border: 2px solid black;
+    display: inline-block;
+}
+.menu-item img {
+    height: 200px;
+    width: 200px;
+}
+
+.hidden {
+  display:none;
+  width:fit-content;
+}
+
+p {
+  min-height: 20px;
+  border: 1px solid black;
+  width:fit-content;
+}
+
+.editable-in-place {
+
+}
