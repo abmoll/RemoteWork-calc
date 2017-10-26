@@ -1,0 +1,31 @@
+body {
+  background-color: gray;
+  background-image: url(boulder_night.jpg);
+  background-size: contain;
+  color: white;
+  font-family: sans-serif;
+
+}
+
+h4 {
+  color: grey;
+}
+
+#theBox {
+  height: 100px;
+  width: 200px;
+  padding: 3px;
+  margin: 10px;
+}
+
+.title-bar {
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  color: white;
+
+}
+
+img {
+  opacity: 0.8;
+}
