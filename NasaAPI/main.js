@@ -14,9 +14,10 @@ $(document).ready(function() {
       for (var i=0; i<data.near_earth_objects[day].length; i++) {
         if (data.near_earth_objects[day][i].is_potentially_hazardous_asteroid) {
           $(".theScreen").append("<br><p>Asteroid Name: " + data.near_earth_objects[day][i].name + "</p>")
-          $(".theScreen").append("<p>Velocity MPH: " + data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour + "</p>")
-          $(".theScreen").append("<p>Max Diameter Feet: " + data.near_earth_objects[day][i].estimated_diameter.feet.estimated_diameter_max + "</p>")
+          $(".theScreen").append("<p>Velocity MPH: " + Math.round(data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour) + "</p>")
+          $(".theScreen").append("<p>Max Diameter Feet: " + Math.round(data.near_earth_objects[day][i].estimated_diameter.feet.estimated_diameter_max) + "</p>")
           $(".theScreen").append("<p>Distance from Earth in Miles: " + data.near_earth_objects[day][i].close_approach_data[0].miss_distance.miles + "</p>")
+
           //var speed = data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour;
           //console.log("speed = " + speed);
           //speed.sort((function(a, b){return a-b}));

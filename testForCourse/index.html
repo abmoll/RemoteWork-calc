@@ -2,23 +2,27 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-  <div class="title-bar">
-  <h1>
-  Hazardous Asteroids Tracked October 17-24
-</h1>
-</div>
-<p> <font size="8px">
-  Shoot it before it's too late!!<br></font>
-  <img width=600px src="Asteroids.jpg">
-</p>
-<div class="theScreen">
+<p>
+  <div id="app">
+    <h1>
+  {{message}}
+  </h1>
+  <button v-on:click="newText">Click here</button>
+  </div>
 
+<!--<input v-model="anchorHref">
+<p>{{anchorRef}}</p>
+  <p v-for="friend in friends" v-on:click"logMyFriend(friend)">
+      {{friend.firstName}}</p>
+    -->
+
+</p>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script src=./main.js></script>
-  </div>
 </div>
   </body>
   </html>
