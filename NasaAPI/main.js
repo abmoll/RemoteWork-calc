@@ -7,31 +7,31 @@ $(document).ready(function() {
     //console.log(data);
 
     for (var day in data.near_earth_objects) {
-      //console.log("Asteroid Name" + data.near_earth_objects[day][0].name);
-      getInfo(data.near_earth_objects[day]);
-      //console.log("Velocity" + data.near_earth_objects[day][0].close_approach_data.relative_velocity);{
+      //getInfo(data.near_earth_objects[day]);
 
-    //$("p").append("<b>Appended text</b>");
+      //day.sort(function(a, b){return b-a});
+      //display all big asteroids
       for (var i=0; i<data.near_earth_objects[day].length; i++) {
         if (data.near_earth_objects[day][i].is_potentially_hazardous_asteroid) {
-          $(".theScreen").append("<p>Asteroid Name: " + data.near_earth_objects[day][i].name + "</p>")
+          $(".theScreen").append("<br><p>Asteroid Name: " + data.near_earth_objects[day][i].name + "</p>")
           $(".theScreen").append("<p>Velocity MPH: " + data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour + "</p>")
           $(".theScreen").append("<p>Max Diameter Feet: " + data.near_earth_objects[day][i].estimated_diameter.feet.estimated_diameter_max + "</p>")
-          $(".theScreen").append("<p>Distance from Earth in Miles: " + data.near_earth_objects[day][i].close_approach_data[0].miss_distance.miles + "</p><br>")
+          $(".theScreen").append("<p>Distance from Earth in Miles: " + data.near_earth_objects[day][i].close_approach_data[0].miss_distance.miles + "</p>")
+          //var speed = data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour;
+          //console.log("speed = " + speed);
+          //speed.sort((function(a, b){return a-b}));
         }
     }
   }
 
   function getInfo(dayArr) {
     console.log(dayArr);
-    dayArr.forEach(function (element) {
+  //  dayArr.forEach(function (element) {
       //console.log("Name" + element.name, "Max Diameter Feet: " + element.estimated_diameter.feet.estimated_diameter_max);
-
-    });
+  //  });
       //console.log(element.close_approach_data[console.log(element.absolute_magnitude_h);0].miss_distance.miles);
     }
-    //text method
-    //var name1 = data.near_earth_objects[day][0].name
+
 
 //get list of asteroids based on closest approach to earth
 //GET https://api.nasa.gov/neo/rest/v1/feed?start_date=START_DATE&end_date=END_DATE&api_key=API_KEY
