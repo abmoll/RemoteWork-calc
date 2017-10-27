@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<p>
+  <div id="map">
+    <img v-on:click="addMarker($event)" width=100% src="topo-co.jpg">
+    <div class="marker" v-on:click="removeMarker(index)" v-for="(mark, index) in markers" v-bind:style="{left:mark.lat, top:mark.lng}"></div>
+    <h1>
+  </h1>
+  </div>
+
+<!--<input v-model="anchorHref">
+<p>{{anchorRef}}</p>
+  <p v-for="friend in friends" v-on:click"logMyFriend(friend)">
+      {{friend.firstName}}</p>
+    -->
+
+</p>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src=./main.js></script>
+</div>
+  </body>
+  </html>
