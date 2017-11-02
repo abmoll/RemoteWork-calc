@@ -9,13 +9,14 @@ var count = 0;
 
 //$('#text-box').on('click',function(event)
 
-function submitEmail() {
-  var emailAddr = document.getElementById('email').value;
-  countVowels(emailAddr);
-}
+// function submitEmail() {
+//   var emailAddr = document.getElementById('email').value;
+//   countVowels(emailAddr);
+// }
 
 function logMetrics() {
   console.log("Highest Scroll Percent: " + highestScroll);
+  console.log("Vowel Count: " + count);
 }
 
 // window.onbeforeunload = function(){
@@ -29,16 +30,16 @@ $(window).bind('beforeunload', function() {
   return 'Are you sure you want to leave?';
 });
 
-function countVowels(text) {
-  for (var i in text) {
-    //for (var i=0; i<text.length; i++) {
-    if (text[i] == 'a' || text[i] == 'e' || text[i] == 'i' || text[i] == 'o' || text[i] == 'u') {
-      count++
-    }
-  }
-  alert("vowels: " + count);
-  return count;
-}
+// function countVowels(text) {
+//   for (var i in text) {
+//     //for (var i=0; i<text.length; i++) {
+//     if (text[i] == 'a' || text[i] == 'e' || text[i] == 'i' || text[i] == 'o' || text[i] == 'u') {
+//       count++
+//     }
+//   }
+//   alert("vowels: " + count);
+//   return count;
+// }
 
 var startTime, endTime;
 
@@ -74,7 +75,7 @@ $(window).on('scroll', function() {
 })
 
 var mouseenterTime = 0;
-
+var mouseoverTime = 0;
 
 function recordLink() {
   var link = $('#bVisit').attr("href");
@@ -86,9 +87,15 @@ function recordRest() {
   alert(link);
 }
 
+$( "#email" ).keypress(function(event) {
+  if (event.which == 97 || event.which == 101 || event.which == 105 || event.which == 111 || event.which == 117) {
+    count++
+  }
+  console.log(count);
+  return count;
+});
 
 $(".title-bar").on('mouseenter mouseleave', function(event) {
-
   var currentTime = new Date();
   if (event.type === 'mouseenter') {
     mouseenterTime = currentTime.getTime();
