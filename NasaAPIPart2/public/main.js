@@ -1,13 +1,20 @@
 $(document).ready(function() {
   console.log("ready!");
 });
-
+//any code inside doc ready wont run until html is loaded on page,
+//so best practice is to place whatever relates to html inside document ready
+//not like above
   $("#form").submit(function(event) {
     event.preventDefault();
     var sD = document.getElementById("startDate").value;
     var eD = document.getElementById("endDate").value;
     console.log(sD);
     console.log(eD);
+
+    //new form
+    var message = document.getElementById("message").value;
+    var speaker = document.getElementById("speaker").value;
+    $.get(`params/firstparam/${message}/secondparam/${speaker}`)
 
     //send start and end dates to the server
     $.get(`/api?start_date=${sD}&end_date=${eD}`, function(body, status) {
