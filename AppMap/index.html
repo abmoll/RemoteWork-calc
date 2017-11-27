@@ -8,7 +8,15 @@
 <p>
   <div id="map">
     <img v-on:click="addMarker($event)" width=100% src="topo-co.jpg">
-    <div class="marker" v-on:click="removeMarker(index)" v-for="(mark, index) in markers" v-bind:style="{left:mark.lat, top:mark.lng}"></div>
+    <div v-for="(mark, index) in markers">
+      <input v-if="mark.editing" v-model="mark.msg" class="marker-input" v-bind:style="{left:mark.lat+ 30+ 'px', top:mark.lng+ 5+ 'px'}">
+      <p class="marker-p" v-bind:style="{left:mark.lat+ 'px', top:mark.lng+ 'px'}" v-if="!mark.editing">this is a paragraph</p>
+      <div
+      class="marker"
+      v-bind:style="{left:mark.lat+ 'px', top:mark.lng+ 'px'}"
+      v-on:click="removeMarker(index)">
+      </div>
+    </div>
     <h1>
   </h1>
   </div>

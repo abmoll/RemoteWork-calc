@@ -53,6 +53,14 @@ h4 {
   border-radius: 50px;
 
 }
+.marker-input {
+  position: absolute;
+  
+}
+.marker-p {
+  position: absolute;
+
+}
 img {
   opacity: 0.8;
 }

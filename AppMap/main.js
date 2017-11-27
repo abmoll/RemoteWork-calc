@@ -16,10 +16,14 @@ var map = new Vue({
   },
   methods: {
     addMarker: function(evt){
+      console.log('adding a marker')
       map.markers.push({
-        lat: evt.pageX + "px", //ems or rems responsive way to add x and y coordinate on html
-        lng: evt.pageY + "px"
-        //map.markers.message
+        lat: evt.pageX, //ems or rems responsive way to add x and y coordinate on html
+        lng: evt.pageY,
+        msg: "",
+        editing: true
+        //look at width of page and set lat on percentage page-width/evt.pageX
+        //map.markers.msg
         //v-on:hover
       })
       //place marker onto map at location

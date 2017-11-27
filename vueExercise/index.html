@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button-link backgroundColor="red" text="Wikipedia" url="https://wikipedia.org"></button-link>
+    <button-link backgroundColor="red" text="NFL" url="http://nfl.com"></button-link>
+    <chat-friend v-bind:name="friends[0].name"></chat-friend>
+    <chat-friend v-bind:pic="friends[0].profilePic"></chat-friend>
+    <chat-friend
+      v-for="friend in friends"
+      v-bind:name="friend.name"
+      v-bind:pic="friend.profilePic"
+      v-if="!friend.blocked"
+      v-on:block="blockFriend(friend)"
+    ></chat-friend>
+
+  </div>
+  <script src="./main.js"></script>
+  <script> src="text/template" id="chat-friend-template"></script>
+    <div class="chat-friend" v-on:click="block">
+      <div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</body>
+
+</html>

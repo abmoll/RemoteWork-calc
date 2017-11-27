@@ -25,33 +25,16 @@ app.get('/', function(request, response) {
   response.sendFile('./public/index.html', {root: './'})
   console.log("Welcome to the internet!");
 })
+
   //localhost:8080?message='hello'
   //$.get('/?message=hello')
   //req.query.message='hello'
   //express turns this into an object
-  app.get('params/firstparam/:message/secondparam/:speaker', function(req,res)) {
-  console.log('query: ' + req.query)
-  console.log('params' + req.params)
-  res.send('${req.params.speaker}' says '${req.params.message}')
-})
-
-app.get('/hello', function(request, response) {
-  response.send("Hello World");
-})
-
-app.get('/Home', function(request, response) {
-  response.sendFile('./public/index.html', {root: './'})
-})
-
-app.get('/foo/bar', function(request, response) {
-  response.sendFile('./public/main.css', {root: './'})
-})
-
-app.post('/form-submit', function(request, response) {
-  console.log("received post request!")
-  //response.send("received the post request!")
-  response.redirect('/about');
-})
+//   app.get('params/firstparam/:message/secondparam/:speaker', function(req,res)) {
+//   console.log('query: ' + req.query)
+//   console.log('params' + req.params)
+//   res.send('${req.params.speaker}' says '${req.params.message}')
+// })
 
 app.listen(8080, function() {
   console.log('The app is running on 8080');
