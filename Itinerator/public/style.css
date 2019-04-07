@@ -1,8 +1,149 @@
-#map {
-        height: 400px;
-        width: 100%;
-       }
-
-#all {
-  padding: 15px;
+/* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+/* .sortable-dragging{
+  font-family: sans-serif;
 }
+.sortable-placeholder{
+  font-family: sans-serif;
+} */
+
+  html, body {
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    background-color: #f2ecd7;
+    background-image: url('../../back3.jpg');
+  }
+  table {
+    font-size: 12px;
+  }
+  #leftBtn, #rightBtn, #farBtn {
+    border-radius: 10px;
+    border: 1px; height: 120px;
+    border-style: dotted;
+    padding: 1px;
+    padding-top: 0px;
+    border-width: 1px;
+  }
+  /*#leftBtn{
+    display: inline-block;
+    min-width: 160px;
+  }*/
+  #eventHeader, #placeHeader, #trailHeader{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    /*height: 25px;*/
+    padding-top: 1px;
+  }
+  #eventType, #eventTime {
+    text-align: center;
+    width: 100%;
+    max-width: 130px;
+    /*padding: 2px;*/
+  }
+  #trailsSubmit{
+    width: 100%;
+    max-width: 100px;
+    height: 29px;
+    /*margin: auto;*/
+    text-align: center;
+  }
+  #eventSubmit {
+    margin-left: 3px;
+    height: 29px;
+    max-width: 100px;
+    text-align: center;
+    width: 100%;
+  }
+  #country {
+    padding: 2px;
+  }
+  #placeForm {
+    padding: 2px;
+  }
+  #placeType {
+    text-align: center;
+    padding: 2px;
+    width: 100%;
+    max-width: 160px;
+    /*height: 25px;*/
+    /*top: 0px;*/
+    z-index: 5;
+  }
+
+  /*#findPlace{
+    top: 0px;
+    z-index: 5;
+  }*/
+
+  #autocomplete {
+    text-align: center;
+    position: relative;
+    width: 98%;
+    max-width: 220px;
+    /*padding-top: 1px;*/
+    /*width: 250px;*/
+    height: 27px;
+    top: 0px;
+    z-index: 5;
+  }
+  #controls {
+    /*position: relative;*/
+    /*margin-bottom: 2px;*/
+    /*top: 3px;*/
+    z-index: 5;
+  }
+  #all{
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+  }
+  #header {
+    text-align: center;
+    padding: 2px;
+    padding-bottom: 4px;
+    margin-right: 2px;
+  }
+  #map {
+    height: 650px;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+  }
+  #listing {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    top: 0px;
+    cursor: pointer;
+    overflow-x: hidden;
+    background-color: beige;
+  }
+  .placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+  }
+  .hotelIcon {
+    width: 24px;
+    height: 24px;
+  }
+  #resultsTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #rating {
+    font-size: 15px;
+    font-family: Arial Unicode MS;
+  }
+  .iw_table_row {
+    height: 18px;
+  }
+  .iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+  }
+  .iw_table_icon {
+    text-align: right;
+  }

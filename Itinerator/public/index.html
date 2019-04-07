@@ -3,34 +3,187 @@
 
 <head>
   <title>Itinerator</title>
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <!-- <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script> -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <!-- <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+
+  <script src="./main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOK8unHwKjh44byRIfMgAuRBpoH63_CqE&libraries=geometry,places&callback=initMap" async defer></script>
   <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-<div id="all">
-  <h3>My Google Maps Demo</h3>
-    <div id="container" style="width:100%">
-  <div id="left" style="float:left; width:35%"> This is left panel <br>
-  <form id="form">
-    <input id="locality" type="text" placeholder="Enter City"><br>
-    <input id="region" type="text" placeholder="Enter State"><br>
-    <input id="postalCode" type="text" placeholder="Enter Zip Code"><br></br>
-    <input type="submit" value="Submit"><br>
+   <div id="all">
+  <div id="header">
+    <h3>Itinerator</h3>
   </div>
-  <div id="right" style="float:right; width:65%"> This is right panel
-      <div id="map"></div>
+  <div id="btn_container" style="width:100%;">
+    <div id="leftBtn" style="float:left; width:39%;">
+      <div id="placeHeader" class='panel-heading'>Places</div>
+      <form id="placeForm" class='panel-collapse'>
+    <!-- <div id="placeField"> -->
+      <select required id="placeType">
+      <option selected disabled>Select type of place</option>
+      <option value="rest">restaurant</option>
+      <option value="lodging">lodging</option>
+      <option value="trail">trail</option>
+      <option value="bar">bar</option>
+      <option value="cafe">cafe</option>
+      <option value="bakery">bakery</option>
+      <option value="museum">museum</option>
+    </select>
+    <!-- </div> -->
+    <!-- <div id="locationField"> -->
+      <input id="autocomplete" placeholder="Enter a city  " type="text" onfocus="this.value='';">
+    <!-- </div> -->
+    <!-- <div id="controls"> -->
+      <select id="country">
+      <option value="all">All</option>
+      <option value="au">Australia</option>
+      <option value="br">Brazil</option>
+      <option value="ca">Canada</option>
+      <option value="fr">France</option>
+      <option value="de">Germany</option>
+      <option value="mx">Mexico</option>
+      <option value="nz">New Zealand</option>
+      <option value="it">Italy</option>
+      <option value="za">South Africa</option>
+      <option value="es">Spain</option>
+      <option value="pt">Portugal</option>
+      <option value="us"selected>U.S.A.</option>
+      <option value="uk">United Kingdom</option>
+    </select>
+    <input id="placeSubmit" type="button" value="Find Place">
+    <!-- </div> -->
+  </form>
   </div>
-</form>
-</div>
+    <div id="rightBtn" style="float:left; width:38%;">
+    <div id="eventHeader">Events</div>
+    <form id="eventsForm">
+      <select id = "eventType">
+        <option value="concert">concert</option>
+        <option value="festival">festival</option>
+        <option value="arts">performing arts</option>
+        <option value="nightlife">nightlife</option>
+        <option value="movies">movie</option>
+      </select>
+      <select id = "eventTime">
+        <option value="today">today</option>
+        <option value="this week">this week</option>
+        <option value="next week">next week</option>
+        <option value="thismonth">this month</option>
+        <input id="eventSubmit" type="submit" value="Find Events">
+      </select>
+    </form>
+  </div>
+    <div id="farBtn" style="float:left; width:23%;">
+
+      <form id="trailForm">
+        <input id="trailsSubmit" type="submit" value="Find Trails">
+      </form>
+      <input id="displayTrip" type="button" value="Display Trip">
+      <input id="getDirections" type="button" value="Get Directions">
+
+      <select required id="dirType">
+        <option selected disabled>Select type of directions</option>
+        <option value="driving">driving</option>
+        <option value="lodging">walking</option>
+      </select>
+
+    </div>
+  </div>
 </div>
 
-<script src="./main.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOK8unHwKjh44byRIfMgAuRBpoH63_CqE&callback=initMap" type="text/javascript"></script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC46J7DlCyI-jZLtGueSXja2uDkdDEJYRA&libraries=places&callback=mainVm.initMap">
-</script> -->
+    <div id="container" style="width:100%;">
+      <div id="map" style="float:left; width:75%; padding:0px;">
+        <div id="left"></div>
+      </div>
+      <div id="right" style="float:right; width:25%; padding:0px;">
+        <div id="listing" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- <tr draggable="true" ondragstart="drag(event)" id="drag1"> -->
+          <table id="resultsTable">
+
+              <!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> -->
+
+                <!-- </div> -->
+                <!-- <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+
+            <tbody id="results"></tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+<!-- contents of info windows displayed on map after marker click-->
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">Website:</td>
+            <td id="iw-website"></td>
+          </tr>
+            <tr id="iw-difficulty-row" class="iw_table_row">
+              <td class="iw_attribute_name">Difficulty:</td>
+              <td id="iw-difficulty"></td>
+              </tr>
+              <tr id="iw-venue-row" class="iw_table_row">
+                <td class="iw_attribute_name">Venue:</td>
+                <td id="iw-venue"></td>
+              </tr>
+                <tr id="iw-eventDate-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Date:</td>
+                  <td id="iw-eventDate"></td>
+                </tr>
+                <tr id="iw-elevGain-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Ascent (ft):</td>
+                  <td id="iw-elevGain"></td>
+                </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <div id="trailResults"></div> -->
+  <script type="text/javascript">
+    $('tbody').sortable();
+  </script>
 </body>
+
 </html>
